@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/huangqiwei/Projects/GraPro/GraPro/GraPro.csproj": {}
+    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {}
   },
   "projects": {
-    "/Users/huangqiwei/Projects/GraPro/GraPro/GraPro.csproj": {
+    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/huangqiwei/Projects/GraPro/GraPro/GraPro.csproj",
+        "projectUniqueName": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
         "projectName": "GraPro",
-        "projectPath": "/Users/huangqiwei/Projects/GraPro/GraPro/GraPro.csproj",
+        "projectPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
         "packagesPath": "/Users/huangqiwei/.nuget/packages/",
-        "outputPath": "/Users/huangqiwei/Projects/GraPro/GraPro/obj/",
+        "outputPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/huangqiwei/.config/NuGet/NuGet.Config"
@@ -38,9 +38,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[8.7.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
