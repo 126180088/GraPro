@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Configuration;
 
-namespace JWT.MvcDemo.Help
+namespace GraPro.Helpper
 {
 
     public class DESCryption

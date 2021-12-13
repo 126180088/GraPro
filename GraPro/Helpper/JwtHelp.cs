@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication1.model
+namespace GraPro.Helpper
 {
     public class JwtHelp
     {
@@ -37,6 +37,7 @@ namespace WebApplication1.model
             IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
 
             var token = encoder.Encode(payload, secret);
+
             return token;
         }
 
