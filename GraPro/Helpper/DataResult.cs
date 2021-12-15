@@ -18,7 +18,7 @@ namespace GraPro.Helpper
         /// <summary>
         /// 消息返回类
         /// </summary>
-        public string data { get; set; }
+        public object data { get; set; }
 
         public int result { get; set; }
 

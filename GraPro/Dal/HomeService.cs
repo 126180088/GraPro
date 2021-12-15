@@ -18,20 +18,21 @@ namespace GraPro.Dal
             {
                 var payload = new Dictionary<string, object>
                 {
+                    { "id" , 1 },
                     { "username",UserName },
-                    { "pwd", Pwd }
+                    { "DateTime",DateTime.Now }
                 };
 
                 var Token = JwtHelp.SetJwtEncode(payload);
 
 
-                return new Home_Response { data = Token, result = 0, message = "success" };
+                return new Home_Response { data = Token };
 
             }
             else
             {
 
-                return new Home_Response { data = string.Empty, result = 1, message = "false" };
+                return new Home_Response { result = 1, message = "false" };
 
             }
 

@@ -1,9 +1,12 @@
 ﻿using GraPro.Models;
+using GraPro.ResponseModel;
 using JWT;
 using JWT.Algorithms;
 using JWT.Serializers;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -14,7 +17,7 @@ namespace GraPro.Helpper
         //私钥 web.config中配置
         //"GQDstcKsx0NHjPOuXOYg5MbeJ1XT0uFiwDVvVBrk";
         private static string secret = "GQDstcKsx0NHjPOuXOYg5MbeJ1XT0uFiwDVvVBrk";
-        //ConfigurationManager.AppSettings["Secret"].ToString();
+        //ConfigurationManager.AppSettings["PrivateToken"].ToString();
 
         /// <summary>
         /// 生成JwtToken
@@ -23,13 +26,6 @@ namespace GraPro.Helpper
         /// <returns></returns>
         public static string SetJwtEncode(Dictionary<string, object> payload)
         {
-
-            //格式如下
-            //var payload = new Dictionary<string, object>
-            //{
-            // { "username","admin" },
-            // { "pwd", "claim2-value" }
-            //};
 
             IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
             IJsonSerializer serializer = new JsonNetSerializer();
@@ -46,16 +42,51 @@ namespace GraPro.Helpper
         /// </summary>
         /// <param name="token">jwtToken</param>
         /// <returns></returns>
-        public static User GetJwtDecode(string token)
+        public static DataResult GetJwtDecode(string token)
         {
-            IJsonSerializer serializer = new JsonNetSerializer();
-            IDateTimeProvider provider = new UtcDateTimeProvider();
-            IJwtValidator validator = new JwtValidator(serializer, provider);
-            IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
-            var algorithm = new HMACSHA256Algorithm();
-            IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
-            var userInfo = decoder.DecodeToObject<User>(token, secret, verify: true);//token为之前生成的字符串
-            return userInfo;
+
+            TJson jwt = new TJson();
+
+            Home_Response home_Response = new Home_Response();
+
+            try
+            {
+                IJsonSerializer serializer = new JsonNetSerializer();
+                IDateTimeProvider provider = new UtcDateTimeProvider();
+                IJwtValidator validator = new JwtValidator(serializer, provider);
+                IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
+                var algorithm = new HMACSHA256Algorithm();
+                IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
+
+                User userInfo = decoder.DecodeToObject<User>(token, secret, verify: true);//token为之前生成的字符串
+                
+                DateTime endTime = userInfo.StartTime.AddHours(1);
+
+                if (endTime > DateTime.Now)
+                {
+
+                    home_Response.data = userInfo ;
+
+                }
+                else
+                {
+                    home_Response.result = 1;
+                    home_Response.message = "Token已过期";
+                }
+
+                return home_Response;
+            }
+            catch (Exception e)
+            {
+
+                home_Response.message = e.Message;
+
+                home_Response.result = 1;
+
+                return home_Response;
+            }
+
+
         }
     }
 }
