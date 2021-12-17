@@ -59,8 +59,12 @@ namespace GraPro.Helpper
                 IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
 
                 User userInfo = decoder.DecodeToObject<User>(token, secret, verify: true);//token为之前生成的字符串
-                
-                DateTime endTime = userInfo.StartTime.AddHours(1);
+
+                //DateTime endTime = DateTime.Parse(userInfo.StartTime).AddHours(1);
+                DateTime endTime = userInfo.StartTime.AddHours(3);
+
+
+
 
                 if (endTime > DateTime.Now)
                 {

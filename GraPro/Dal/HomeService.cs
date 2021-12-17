@@ -20,7 +20,7 @@ namespace GraPro.Dal
                 {
                     { "id" , 1 },
                     { "username",UserName },
-                    { "DateTime",DateTime.Now }
+                    { "StartTime",DateTime.Now }
                 };
 
                 var Token = JwtHelp.SetJwtEncode(payload);

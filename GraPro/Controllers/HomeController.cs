@@ -34,15 +34,13 @@ namespace GraPro.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        public ActionResult ToToken(string token)
-        {
+        //[HttpPost]
+        //public ActionResult ToToken(string token)
+        //{
 
-            HomeService homeService = new HomeService();
+        //    var result = JwtHelp.GetJwtDecode(token);
 
-            var result = JwtHelp.GetJwtDecode(token);
-
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
     }
 }

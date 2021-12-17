@@ -112,3 +112,4 @@ D:\杂货\GraPro\GraPro\obj\Debug\net5.0\GraPro.dll
 D:\杂货\GraPro\GraPro\obj\Debug\net5.0\ref\GraPro.dll
 D:\杂货\GraPro\GraPro\obj\Debug\net5.0\GraPro.pdb
 D:\杂货\GraPro\GraPro\obj\Debug\net5.0\GraPro.genruntimeconfig.cache
+D:\杂货\GraPro\GraPro\obj\Debug\net5.0\GraPro.csproj.AssemblyReference.cache
