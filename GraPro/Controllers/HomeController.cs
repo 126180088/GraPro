@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using GraPro.Dal;
 using GraPro.Helpper;
 using GraPro.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 
 namespace GraPro.Controllers
 {
+    [EnableCors("any")]
     [ApiController]
     [Route("api/[controller]/[action]")]
-    
     public class HomeController : ControllerBase
     {
         /// <summary>
@@ -21,15 +22,15 @@ namespace GraPro.Controllers
         /// 账号密码获取Token
         /// </summary>
         /// <param name="username"></param>
-        /// <param name="pwd"></param>
+        /// <param name="Password"></param>
         /// <returns></returns>
-        [HttpGet]
-        public ActionResult CreateToken(string username, string pwd)
+        [HttpPost]
+        public ActionResult CreateToken(User user)
         {
 
             HomeService homeService = new HomeService();
 
-            var result = homeService.GetToken(username, pwd);
+            var result = homeService.GetToken(user.UserName, user.Password);
 
             return Ok(result);
         }

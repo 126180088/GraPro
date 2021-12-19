@@ -8,13 +8,13 @@ namespace GraPro.Dal
 {
     public class HomeService
     {
-        public DataResult GetToken(string UserName, string Pwd)
+        public DataResult GetToken(string UserName, string Password)
         {
 
             DataResult result = new DataResult();
 
             //假设用户名为"admin"，密码为"123" 
-            if (UserName == "admin" && Pwd == "123")
+            if (UserName == "admin" && Password == "123")
             {
                 var payload = new Dictionary<string, object>
                 {

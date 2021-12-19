@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj": {}
+    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {}
   },
   "projects": {
-    "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj": {
+    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj",
+        "projectUniqueName": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
         "projectName": "GraPro",
-        "projectPath": "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj",
-        "packagesPath": "C:\\Users\\RWX\\.nuget\\packages\\",
-        "outputPath": "D:\\杂货\\GraPro\\GraPro\\obj\\",
+        "projectPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
+        "packagesPath": "/Users/huangqiwei/.nuget/packages/",
+        "outputPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\RWX\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/huangqiwei/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://192.168.0.188/VanGoGitNuGet/nuget/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,12 +35,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "JWT": {
               "target": "Package",
               "version": "[8.7.0, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -83,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
