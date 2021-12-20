@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {}
+    "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj": {}
   },
   "projects": {
-    "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj": {
+    "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
+        "projectUniqueName": "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj",
         "projectName": "GraPro",
-        "projectPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/GraPro.csproj",
-        "packagesPath": "/Users/huangqiwei/.nuget/packages/",
-        "outputPath": "/Users/huangqiwei/Desktop/GraPro/GraPro/obj/",
+        "projectPath": "D:\\杂货\\GraPro\\GraPro\\GraPro.csproj",
+        "packagesPath": "C:\\Users\\RWX\\.nuget\\packages\\",
+        "outputPath": "D:\\杂货\\GraPro\\GraPro\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/huangqiwei/.config/NuGet/NuGet.Config"
+          "C:\\Users\\RWX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://192.168.0.188/VanGoGitNuGet/nuget/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -81,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

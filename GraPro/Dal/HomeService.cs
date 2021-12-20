@@ -26,13 +26,13 @@ namespace GraPro.Dal
                 var Token = JwtHelp.SetJwtEncode(payload);
 
 
-                return new Home_Response { data = Token };
+                return new Home_Response { data = new { Token = Token } };
 
             }
             else
             {
 
-                return new Home_Response { result = 1, message = "false" };
+                return new Home_Response { status = 1, message = "false" };
 
             }
 

@@ -74,7 +74,7 @@ namespace GraPro.Helpper
                 }
                 else
                 {
-                    home_Response.result = 1;
+                    home_Response.status = 1;
                     home_Response.message = "Token已过期";
                 }
 
@@ -85,7 +85,7 @@ namespace GraPro.Helpper
 
                 home_Response.message = e.Message;
 
-                home_Response.result = 1;
+                home_Response.status = 1;
 
                 return home_Response;
             }

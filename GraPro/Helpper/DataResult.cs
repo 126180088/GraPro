@@ -11,7 +11,7 @@ namespace GraPro.Helpper
         public DataResult()
         {
             data = string.Empty;
-            result = 0;
+            status = 0;
             message = "success";
         }
 
@@ -20,7 +20,7 @@ namespace GraPro.Helpper
         /// </summary>
         public object data { get; set; }
 
-        public int result { get; set; }
+        public int status { get; set; }
 
         public string message { get; set; }
 
