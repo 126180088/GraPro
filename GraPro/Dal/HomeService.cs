@@ -19,6 +19,7 @@ namespace GraPro.Dal
                 var payload = new Dictionary<string, object>
                 {
                     { "id" , 1 },
+                    { "role","管理员" },
                     { "username",UserName },
                     { "StartTime",DateTime.Now }
                 };

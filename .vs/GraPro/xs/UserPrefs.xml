@@ -1,11 +1,14 @@
 ﻿<Properties StartupConfiguration="{432488C6-A1D2-4CC1-AA2C-471CF9015D0C}|Default">
   <MonoDevelop.Ide.ItemProperties.GraPro PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GraPro/Dal/HomeService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GraPro/Models/User.cs">
     <Files>
-      <File FileName="GraPro/Properties/launchSettings.json" Line="25" Column="44" />
-      <File FileName="GraPro/Controllers/HomeController.cs" Line="33" Column="46" />
-      <File FileName="GraPro/Startup.cs" Line="39" Column="1" />
-      <File FileName="GraPro/Dal/HomeService.cs" Line="18" Column="14" />
+      <File FileName="GraPro/Properties/launchSettings.json" Line="25" Column="7" />
+      <File FileName="GraPro/Controllers/HomeController.cs" />
+      <File FileName="GraPro/Startup.cs" Line="53" Column="1" />
+      <File FileName="GraPro/Dal/HomeService.cs" Line="24" Column="49" />
+      <File FileName="GraPro/appsettings.json" Line="1" Column="1" />
+      <File FileName="GraPro/Helpper/DataResult.cs" Line="1" Column="1" />
+      <File FileName="GraPro/Models/User.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,11 +17,11 @@
             <Node name="GraPro" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Dal" expanded="True">
-                <Node name="HomeService.cs" selected="True" />
-              </Node>
+              <Node name="Dal" expanded="True" />
               <Node name="Helpper" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="User.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="ResponseModel" expanded="True" />
             </Node>

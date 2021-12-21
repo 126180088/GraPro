@@ -20,10 +20,6 @@ namespace GraPro
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
-
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -49,18 +45,13 @@ namespace GraPro
         {
             if (env.IsDevelopment())
             {
-
-                app.UseSwagger();
-
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GraPro v1"));
-
                 app.UseDeveloperExceptionPage();
-
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GraPro v1"));
+                app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
-
-            app.UseStaticFiles();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -68,14 +59,9 @@ namespace GraPro
 
             //配置Cors
             app.UseCors("any");
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers().RequireCors("any");
-
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
