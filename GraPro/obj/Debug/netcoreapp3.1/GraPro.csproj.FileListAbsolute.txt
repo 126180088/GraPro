@@ -73,7 +73,6 @@ D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\
 D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Windows.Extensions.dll
-D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.csproj.AssemblyReference.cache
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.GeneratedMSBuildEditorConfig.editorconfig
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.AssemblyInfoInputs.cache
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.AssemblyInfo.cs
@@ -86,3 +85,14 @@ D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.csproj.CopyComplete
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.dll
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.pdb
 D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.genruntimeconfig.cache
+D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\GraPro.Views.dll
+D:\杂货\GraPro\GraPro\bin\Debug\netcoreapp3.1\GraPro.Views.pdb
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.RazorAssemblyInfo.cache
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.RazorAssemblyInfo.cs
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.TagHelpers.input.cache
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.TagHelpers.output.cache
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.RazorCoreGenerate.cache
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.RazorTargetAssemblyInfo.cs
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.Views.pdb
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.csproj.AssemblyReference.cache
