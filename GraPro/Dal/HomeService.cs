@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GraPro.Helpper;
 using GraPro.Models;
 using GraPro.ResponseModel;
+using MySql.Data.MySqlClient;
 
 namespace GraPro.Dal
 {
@@ -12,6 +13,11 @@ namespace GraPro.Dal
         {
 
             DataResult result = new DataResult();
+
+
+            MySqlConnection cnn = new MySqlConnection();
+
+            //cnn.ConnectionString = 
 
             //假设用户名为"admin"，密码为"123" 
             if (UserName == "admin" && Password == "123")

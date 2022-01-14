@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using GraPro.Helpper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -37,6 +38,7 @@ namespace GraPro
                 });
             });
 
+            AppSetting.SetAppSetting(Configuration.GetSection("Config"));
 
         }
 
