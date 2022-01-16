@@ -1,24 +1,51 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GraPro.Models;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Linq;
 
 namespace GraPro.Helpper
 {
-    public static class DBHelper
+    public class DBHelper
     {
-        //声明一个私有的构造方法，让外部无法调用这个类的构造方法
-        private  DBHelper()
+
+        
+
+        //声明一个MySqlConnection来控制数据的连接
+        MySqlConnection con;
+
+        public MySqlConnection LineLn()
         {
             string conn = AppSetting.GetAppSetting("conn");
 
-            //声明一个MySqlConnection来控制数据的连接
-            MySqlConnection con = new MySqlConnection();
+            if (con == null)
+            {
+                con = new MySqlConnection(conn);
+            }
+
+
+            con.Open();
+
+            return con;
         }
 
-        //创建静态的方法，  创建此类唯一的对象
-        public static DBHelper MysqlConfig()
+        //查询登录用户是否存在
+        public object GetUser()
         {
-                
-            return con;
+            MySqlConnection db = LineLn();
+
+            string sqlCommdStr = @"SELECT * FROM USER_INFO";
+
+            DataSet dataSet = new DataSet();
+
+            MySqlDataAdapter cmd = new MySqlDataAdapter(sqlCommdStr, db);
+
+            cmd.Fill(dataSet);
+
+            return dataSet.Tables[0].Rows[0];
+
         }
     }
 }

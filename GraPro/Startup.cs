@@ -21,6 +21,8 @@ namespace GraPro
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            AppSetting.SetAppSetting(Configuration.GetSection("ConnectionStrings"));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -38,7 +40,7 @@ namespace GraPro
                 });
             });
 
-            AppSetting.SetAppSetting(Configuration.GetSection("Config"));
+            
 
         }
 

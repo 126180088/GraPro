@@ -14,10 +14,15 @@ namespace GraPro.Dal
 
             DataResult result = new DataResult();
 
+            DBHelper dBHelper = new DBHelper();
 
-            MySqlConnection cnn = new MySqlConnection();
 
-            //cnn.ConnectionString = 
+            object user = dBHelper.GetUser();
+
+            Console.Write(user);
+
+
+
 
             //假设用户名为"admin"，密码为"123" 
             if (UserName == "admin" && Password == "123")
