@@ -32,7 +32,7 @@ namespace GraPro.Helpper
         }
 
         //查询登录用户是否存在
-        public object GetUser()
+        public User GetUser()
         {
             MySqlConnection db = LineLn();
 
@@ -44,7 +44,14 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
-            return dataSet.Tables[0].Rows[0];
+            User user = new User();
+
+            user.Id = int.Parse( dataSet.Tables[0].Rows[0][0].ToString());
+            user.UserName = dataSet.Tables[0].Rows[0][1].ToString();
+            user.Password = dataSet.Tables[0].Rows[0][2].ToString(); 
+            user.Role = dataSet.Tables[0].Rows[0][3].ToString();
+
+            return user;
 
         }
     }
