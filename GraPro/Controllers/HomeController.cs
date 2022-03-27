@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GraPro.Dal;
-using GraPro.Helpper;
+﻿using GraPro.Dal;
 using GraPro.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 
 namespace GraPro.Controllers
@@ -19,29 +13,35 @@ namespace GraPro.Controllers
     {
         /// <summary>
         /// 登陆
-        /// 账号密码获取Token
         /// </summary>
         /// <param name="username"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult CreateToken(User user)
+        public ActionResult LoginIn(User user)
         {
 
             HomeService homeService = new HomeService();
 
-            var result = homeService.GetToken(user.UserName, user.Password);
+            var result = homeService.GetUser(user.UserName, user.Password);
 
             return Ok(result);
         }
 
-        //[HttpPost]
-        //public ActionResult ToToken(string token)
-        //{
+        /// <summary>
+        /// 更新个人信息
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult UpdataInfo(User user)
+        {
+            HomeService homeService = new HomeService();
 
-        //    var result = JwtHelp.GetJwtDecode(token);
+            var result = homeService.Updata(user);
 
-        //    return Ok(result);
-        //}
+            return Ok(result);
+        }
+
     }
 }

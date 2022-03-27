@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections;
+using System.Data;
+using System.Reflection;
 using System.Text;
 
 namespace GraPro.Helpper
@@ -6,27 +9,49 @@ namespace GraPro.Helpper
     public class TJson
     {
         /// <summary>
-        /// 转换T为json
+        /// dataset转Json
         /// </summary>
-        /// <typeparam name="T">类型</typeparam>
-        /// <param name="model">对象</param>
-        /// <returns>json</returns>
-        public string ConvertToJson<T>(T model)
+        /// <param name="ds"></param>
+        /// <returns></returns>
+        public static string DatasetToJson(System.Data.DataSet ds)
         {
-            //获取属性集合
-            PropertyInfo[] properties = model.GetType().GetProperties();
-            StringBuilder sb = new StringBuilder();
-            sb.Append("{");
-            //遍历属性集合
-            for (int i = 0, len = properties.Length; i < len; i++)
+            StringBuilder json = new StringBuilder();
+            foreach (System.Data.DataTable dt in ds.Tables)
             {
-                if (0 != i) sb.Append(",");
-                sb.AppendFormat("\"{0}\":\"{1}\"",
-                    properties[i].Name.ToLower(),//属性名作为 键
-                    properties[i].GetValue(model, null).ToString());//属性值作为 值
+                json.Append(DataTableToJson(dt));
+                json.Append(",");
             }
-            sb.Append("}");
-            return sb.ToString();
+            json.Remove(json.Length - 1, 1);
+            return json.ToString();
         }
+
+        /// <summary>
+        /// table转json
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public static string DataTableToJson(DataTable dt)
+        {
+            StringBuilder jsonBuilder = new StringBuilder();
+            jsonBuilder.Append("[");
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                jsonBuilder.Append("{");
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    jsonBuilder.Append("\"");
+                    jsonBuilder.Append(dt.Columns[j].ColumnName);
+                    jsonBuilder.Append("\":\"");
+                    jsonBuilder.Append(dt.Rows[i][j].ToString().Replace("\"", "\\\""));
+                    jsonBuilder.Append("\",");
+                }
+                jsonBuilder.Remove(jsonBuilder.Length - 1, 1);
+                jsonBuilder.Append("},");
+            }
+            jsonBuilder.Remove(jsonBuilder.Length - 1, 1);
+            jsonBuilder.Append("]");
+            return jsonBuilder.ToString();
+        }
+
     }
 }

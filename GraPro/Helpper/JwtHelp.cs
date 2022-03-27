@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -58,13 +59,10 @@ namespace GraPro.Helpper
                 var algorithm = new HMACSHA256Algorithm();
                 IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
 
-                User userInfo = decoder.DecodeToObject<User>(token, secret, verify: true);//token为之前生成的字符串
+                DataSet userInfo = decoder.DecodeToObject<DataSet>(token, secret, verify: true);//token为之前生成的字符串
 
                 //DateTime endTime = DateTime.Parse(userInfo.StartTime).AddHours(1);
-                DateTime endTime = userInfo.StartTime.AddHours(3);
-
-
-
+                DateTime endTime = DateTime.Parse(userInfo.Tables[0].Rows[0]["StartTime"].ToString()).AddHours(3);
 
                 if (endTime > DateTime.Now)
                 {
