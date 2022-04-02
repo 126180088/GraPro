@@ -159,3 +159,4 @@ C:\Users\admin\Desktop\毕设\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.cspro
 C:\Users\admin\Desktop\毕设\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.dll
 C:\Users\admin\Desktop\毕设\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.pdb
 C:\Users\admin\Desktop\毕设\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.genruntimeconfig.cache
+D:\杂货\GraPro\GraPro\obj\Debug\netcoreapp3.1\GraPro.csproj.AssemblyReference.cache

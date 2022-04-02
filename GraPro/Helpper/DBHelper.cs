@@ -52,6 +52,8 @@ namespace GraPro.Helpper
 
             string sqlCommdStr = @"UPDATE SYSUSER SET UserName =" + "'" + user.UserName + "', " +
                 "Password = " + "'" + user.Password + "', " +
+                "Sex = " + "'" + user.Sex + "', " +
+                "Birth = " + "'" + user.Birth + "', " +
                 "Telephone = " + "'" + user.Telephone + "', " +
                 "Email = " + "'" + user.Email + "' " +
                 "Where Account = " + "'" + user.Account + "'";

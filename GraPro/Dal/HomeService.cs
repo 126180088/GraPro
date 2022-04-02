@@ -22,20 +22,7 @@ namespace GraPro.Dal
 
                 if (Password == TurnPassword)
                 {
-                    var payload = new Dictionary<string, object>
-                    {
-                        { "Id" , user.Tables[0].Rows[0]["Id"].ToString() },
-                        { "UserName", user.Tables[0].Rows[0]["UserName"].ToString() },
-                        { "Account", user.Tables[0].Rows[0]["Account"].ToString() },
-                        { "Password", user.Tables[0].Rows[0]["Password"].ToString() },
-                        { "Telephone", user.Tables[0].Rows[0]["Telephone"].ToString() },
-                        { "Email", user.Tables[0].Rows[0]["Email"].ToString() },
-                        { "Status", user.Tables[0].Rows[0]["Status"].ToString() },
-                        { "Role", user.Tables[0].Rows[0]["Role"].ToString() },
-                        { "StartTime",DateTime.Now }
-                    };
-
-                    return new Home_Response { data = payload };
+                    return new Home_Response { data = TJson.DatasetToJson(user) };
                 }
                 else
                 {

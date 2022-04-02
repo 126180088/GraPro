@@ -2,7 +2,7 @@
 using GraPro.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Collections.Generic;
 
 namespace GraPro.Controllers
 {
@@ -18,12 +18,12 @@ namespace GraPro.Controllers
         /// <param name="Password"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult LoginIn(User user)
+        public ActionResult LoginIn(Account user)
         {
 
             HomeService homeService = new HomeService();
 
-            var result = homeService.GetUser(user.UserName, user.Password);
+            var result = homeService.GetUser(user.account, user.password);
 
             return Ok(result);
         }
