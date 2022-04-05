@@ -18,12 +18,12 @@ namespace GraPro.Controllers
         /// <param name="Password"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult LoginIn(Account user)
+        public ActionResult LoginIn(Account account)
         {
 
             HomeService homeService = new HomeService();
 
-            var result = homeService.GetUser(user.account, user.password);
+            var result = homeService.GetUser(account.account, account.password);
 
             return Ok(result);
         }
@@ -43,5 +43,34 @@ namespace GraPro.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// 提交就业申请
+        /// </summary>
+        /// <param name="application"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult PostApplication(Application application)
+        {
+            HomeService homeService = new HomeService();
+
+            var result = homeService.ApplicationPost(application);
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// 查询就业申请
+        /// </summary>
+        /// <param name="application"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult ApplicationInfo(AppInfo appInfo)
+        {
+            HomeService homeService = new HomeService();
+
+            var result = homeService.GetAppInfo(appInfo.UId);
+
+            return Ok(result);
+        }
     }
 }

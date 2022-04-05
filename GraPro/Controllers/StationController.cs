@@ -58,5 +58,22 @@ namespace GraPro.Controllers
 
             return Ok(result);
         }
+
+        /// <summary>
+        /// 查询岗位信息
+        /// </summary>
+        /// <param name="station"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult GetStation()
+        {
+
+            StationService stationService = new StationService();
+
+            var result = stationService.StationInfo();
+
+            return Ok(result);
+        }
+
     }
 }
