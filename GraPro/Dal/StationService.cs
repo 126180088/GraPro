@@ -71,5 +71,20 @@ namespace GraPro.Dal
             //创建成功
             return new Home_Response { data = stationinfo };
         }
+
+        /// <summary>
+        /// 查询就业状态
+        /// </summary>
+        /// <returns></returns>
+        public DataResult Status(int UId)
+        {
+            DBHelper dBHelper = new DBHelper();
+
+            DataSet data = dBHelper.Status(UId);
+
+            string jsondata = TJson.DatasetToJson(data);
+
+            return new Home_Response { data = jsondata };
+        }
     }
 }

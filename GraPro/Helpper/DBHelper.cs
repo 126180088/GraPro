@@ -45,6 +45,8 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
+            db.Close();
+
             return dataSet;
 
         }
@@ -72,7 +74,9 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
-            if (dataSet.Tables[0].Rows.Count != 0)
+            db.Close();
+
+            if (dataSet.Tables.Count == 0)
                 return true;
             else
                 return false;
@@ -105,6 +109,8 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
+            db.Close();
+
             if (dataSet == null)
                 return true;
             else
@@ -127,6 +133,8 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
+            db.Close();
+
             return dataSet;
 
         }
@@ -146,6 +154,8 @@ namespace GraPro.Helpper
             MySqlDataAdapter cmd = new MySqlDataAdapter(sqlCommdStr, db);
 
             cmd.Fill(dataSet);
+
+            db.Close();
 
             return dataSet;
 
@@ -167,6 +177,8 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
+            db.Close();
+
             return dataSet;
 
         }
@@ -181,8 +193,6 @@ namespace GraPro.Helpper
         {
             MySqlConnection db = LineLn();
 
-
-
             string sqlCommdStr = @"UPDATE WORKAPPLICATION SET " +
                "CompanyName = " + "'" + application.CompanyName + "', " +
                "CompanyAddress = " + "'" + application.CompanyAddress + "', " +
@@ -192,7 +202,7 @@ namespace GraPro.Helpper
                "Wages = " + application.Wages + ", " +
                "UFile = " + "'" + application.UFile + "', " +
                "AResult = " + application.AResult +
-               "Where UId = " + application.UId;
+               " Where UId = " + application.UId;
 
             DataSet dataSet = new DataSet();
 
@@ -200,7 +210,9 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
-            if (dataSet.Tables[0].Rows.Count != 0)
+            db.Close();
+
+            if (dataSet.Tables.Count == 0)
                 return true;
             else
                 return false;
@@ -223,8 +235,12 @@ namespace GraPro.Helpper
 
             cmd.Fill(dataSet);
 
+
+
             if (dataSet.Tables[0].Rows.Count != 0)
             {
+                db.Close();
+
                 return dataSet;
             }
             else
@@ -237,8 +253,32 @@ namespace GraPro.Helpper
 
                 appcmd.Fill(appdataSet);
 
+                db.Close();
+
                 return appdataSet;
             }
+
+        }
+
+        /// <summary>
+        /// 查询就业状态
+        /// </summary>
+        /// <returns></returns>
+        public DataSet Status(int UId)
+        {
+            MySqlConnection db = LineLn();
+
+            string sqlCommdStr = @"SELECT AResult FROM  WORKAPPLICATION WHERE UID = " + UId;
+
+            DataSet dataSet = new DataSet();
+
+            MySqlDataAdapter cmd = new MySqlDataAdapter(sqlCommdStr, db);
+
+            cmd.Fill(dataSet);
+
+            db.Close();
+
+            return dataSet;
 
         }
     }

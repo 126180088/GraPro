@@ -2,7 +2,7 @@
 {
     public class Application
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public int UId { get; set; }
 

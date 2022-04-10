@@ -75,5 +75,20 @@ namespace GraPro.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// 查询就业状态
+        /// </summary>
+        /// <param name="station"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AppStatus(AppInfo appInfo)
+        {
+
+            StationService stationService = new StationService();
+
+            var result = stationService.Status(appInfo.UId);
+
+            return Ok(result);
+        }
     }
 }
