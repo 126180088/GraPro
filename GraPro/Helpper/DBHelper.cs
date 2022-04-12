@@ -80,7 +80,6 @@ namespace GraPro.Helpper
                 return true;
             else
                 return false;
-
         }
 
         /// <summary>
