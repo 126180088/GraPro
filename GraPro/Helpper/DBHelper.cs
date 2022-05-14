@@ -280,5 +280,31 @@ namespace GraPro.Helpper
             return dataSet;
 
         }
+
+        /// <summary>
+        /// 就业申请审批
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public bool Check(AppResult appResult)
+        {
+            MySqlConnection db = LineLn();
+
+            string sqlCommdStr = @"UPDATE WORKAPPLICATION SET AResult = " + appResult.AResult +
+                " Where UId = " + appResult.UId;
+
+            DataSet dataSet = new DataSet();
+
+            MySqlDataAdapter cmd = new MySqlDataAdapter(sqlCommdStr, db);
+
+            cmd.Fill(dataSet);
+
+            db.Close();
+
+            if (dataSet.Tables.Count == 0)
+                return true;
+            else
+                return false;
+        }
     }
 }

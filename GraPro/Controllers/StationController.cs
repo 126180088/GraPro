@@ -14,7 +14,7 @@ namespace GraPro.Controllers
         /// <summary>
         /// 添加岗位
         /// </summary>
-        /// <param name="station"></param>
+        /// <param name="Station"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult StationAdd(Station station)
@@ -30,7 +30,6 @@ namespace GraPro.Controllers
         /// <summary>
         /// 查询岗位类型
         /// </summary>
-        /// <param name="station"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult GetSType()
@@ -46,7 +45,6 @@ namespace GraPro.Controllers
         /// <summary>
         /// 查询行业类型
         /// </summary>
-        /// <param name="station"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult GetIType()
@@ -62,7 +60,6 @@ namespace GraPro.Controllers
         /// <summary>
         /// 查询岗位信息
         /// </summary>
-        /// <param name="station"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult GetStation()
@@ -78,7 +75,7 @@ namespace GraPro.Controllers
         /// <summary>
         /// 查询就业状态
         /// </summary>
-        /// <param name="station"></param>
+        /// <param name="AppInfo"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult AppStatus(AppInfo appInfo)
@@ -87,6 +84,22 @@ namespace GraPro.Controllers
             StationService stationService = new StationService();
 
             var result = stationService.Status(appInfo.UId);
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// 就业申请审批
+        /// </summary>
+        /// <param name="AppInfo"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AppCheck(AppResult appResult)
+        {
+
+            StationService stationService = new StationService();
+
+            var result = stationService.Check(appResult);
 
             return Ok(result);
         }

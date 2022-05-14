@@ -86,5 +86,21 @@ namespace GraPro.Dal
 
             return new Home_Response { data = jsondata };
         }
+
+        /// <summary>
+        /// 就业申请审批
+        /// </summary>
+        /// <returns></returns>
+        public DataResult Check(AppResult appResult)
+        {
+            DBHelper dBHelper = new DBHelper();
+
+            if (dBHelper.Check(appResult))
+                //审批成功
+                return new Home_Response { status = 0, message = "true" };
+            else
+                //审批失败
+                return new Home_Response { status = 1, message = "false" };
+        }
     }
 }
